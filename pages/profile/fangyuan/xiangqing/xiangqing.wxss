@@ -1,0 +1,206 @@
+/* pages/profile/fangyuan/fabu/fabu.wxss */
+.body{
+  margin:0% 0 0 0;
+}
+.font{
+  font-size: 30rpx;
+}
+.font1{
+  font-size: 20rpx;
+}
+.flex-form{
+  position: relative;
+  width: 600rpx;
+  margin: 20rpx auto;
+  background-color: #fff;
+  height: 300rpx;
+  padding: 0 40rpx 20rpx 40rpx;
+  margin-top:-100rpx;
+  box-shadow:5rpx 5rpx 5rpx 0rpx rgb(242,242,242);
+}
+.search-place{
+  display: flex;
+  flex-flow:nowrap;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid rgb(244,244,244);
+}
+.place1{
+  width: 100%;
+  white-space: nowrap;
+  overflow-x:hidden;
+  overflow-y:auto;
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+}
+.picker view{
+  float:left;
+  margin:0 1% 0 0;
+  font-size: 15px;
+}
+
+.codeLogin-view {
+  height:48rpx;
+  margin-bottom:25rpx;
+  border-bottom:1px solid rgb(193,193,193);
+}
+
+
+
+
+.model {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.input-box {
+  position: absolute;
+  background-color: #f8f8f8;
+  padding: 30rpx;
+  padding-bottom: 130rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  height: 33%;
+  width:50%;
+  top:13%;
+  left:19%
+}
+.submit-btn{
+  width: 150rpx;
+  height: 70rpx;
+  font-size: 24rpx;
+  padding: 0;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  border-radius: 4px;
+  margin: 5%;
+  text-align: center;
+  float:left;
+}
+.submit-btn1{
+  width: 150rpx;
+  height: 70rpx;
+  font-size: 24rpx;
+  padding: 0;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  border-radius: 4px;
+  margin: 11%;
+  text-align: center;
+  float:left;
+}
+
+
+.send {
+  font-size: 14px;
+  margin-top: 5rpx;
+  color: #09bb07;
+  float: right;
+  position: static;
+}
+.btn{
+      width: 150rpx;
+      height: 70rpx;
+      font-size: 24rpx;
+      padding: 0;
+      border: 1px solid #dcdcdc;
+      background: #fff;
+      border-radius: 4px;
+      margin: 5%;
+      text-align: center;
+      float:left;
+  }
+  .btn-selected{
+      border: 1px solid #06a380;
+  }
+  .choose_items{
+
+  }
+  .submit_btn{
+    top: 82%;
+    position:absolute;
+    bottom: 3%;
+    width:100%
+  }
+  
+  .xinxi-box{
+    position: absolute;
+    background-color: #f8f8f8;
+    padding: 30rpx;
+    padding-bottom: 130rpx;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    height: 100%;
+    width:100%;
+    top:0%;
+  }
+  .font2{
+    font-size: 25rpx;
+  }
+  .codeLogin-view1 {
+  height:40rpx;
+  margin-bottom:20rpx;
+  border-bottom:1px solid rgb(193,193,193);
+}
+.huxing1{
+  width: 10%;
+  float:left;
+}
+.huxing{
+  float:left;
+}
+
+
+
+
+.add_button{
+  width:20%;
+  height:13%;
+  position: absolute;
+  text-align: center;
+  line-height: 20%;
+  top:11%;
+  left: 37%;
+}
+
+.picture_list {
+  width:100%;
+}
+.picture_itemlist{
+  width:6%;
+  border: 1px dashed  black;
+}
+.picture_item{
+  height: 100rpx;
+  width: 14%;
+  padding-top: 3%;
+  float: left;
+}
+.upload_progress{
+  position: absolute;
+  width:11%;
+  height:6%;
+  float: left;
+  z-index:100;
+}
+.deleteimg{
+  position: absolute;  
+  z-index:101;
+  color:red;
+  margin-left: 19%;
+  font-size: 20rpx;
+  /* background-color:#dcdcdc; 
+  margin-left: 9%;
+  margin-top: -3%;
+
+  border-radius: 15rpx; */
+}

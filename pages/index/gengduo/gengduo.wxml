@@ -1,0 +1,42 @@
+<!--pages/search/search.wxml-->
+
+<view class='search'>
+<!-- <view class="top-img"> -->
+<!-- <image src="{{beijing}}" class="top-img-info"></image> -->
+<!-- </view> -->
+  <!-- 房屋数据 -->
+  <view class='search-detail' wx:if="{{houseList.length!=0}}">
+    <block wx:for="{{houseList}}" wx:key>
+      <view bindtap='navigatorToHouseDetail' data-status="{{item.status}}" data-id="{{item.Id}}" class='btn-click-242 items' style='background-color:#fff;margin-top:11rpx'>
+        <view class='search-detail-img'>
+          <image class='search-detail-img-image' src='{{item.imageURL}}'></image>
+          <image class="yuding-image" src='../../../img/DB.png' wx:if="{{item.status==1}}"></image>
+           <image class="yuding-image" src='../../../img/Baojie.png' wx:if="{{item.status==2}}"></image>
+        </view>
+        <view class="items-description">
+          <view class="description-title">{{item.HouseName}}</view>
+          <view class="description-text">{{item.roomNum}}室{{item.hallNum}}厅{{item.toiletNum}}卫 宜入住{{item.peopleNum}}人</view>
+          <view class="description-price">￥{{item.presentPrice}}</view>
+          <view class="description-distance">距离你{{item.Distance}}km</view>
+          <view class="description-btn" bindtap="navigatorToHouseDetail" data-id="{{item.Id}}" data-status="{{item.status}}">立即入住</view>
+        </view>
+        <view class="ClassArray">
+          <block wx:for="{{item.ClassArray}}" wx:key>
+            <text class="classnei">{{item}}</text>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view class='noMore font-small' wx:if="{{ houseList.length == total }}">
+      这里是最后一条啦~
+    </view>
+  </view>
+  <!-- 无房屋数据
+  <view class='noData font-middle' wx:else>
+    暂时没有数据~
+  </view> -->
+</view>
+<view hidden="{{isHideLoadMore}}">
+  <zan-loadmore type="loading"></zan-loadmore>
+</view>
+<zan-toast id="zan-toast-test"></zan-toast>

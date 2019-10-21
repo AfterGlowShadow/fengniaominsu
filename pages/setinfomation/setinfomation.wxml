@@ -1,0 +1,27 @@
+<zan-toast id="zan-toast-test"></zan-toast>
+<view class='contain'>
+  <!-- <view class='tab'>
+    <view class="{{tabId==0?'tab-item':''}}" bindtap='changeTab'>绑定已有帐号</view>
+    <view class="{{tabId==1?'tab-item':''}}" bindtap='changeTab'>实名认证</view>
+  </view> -->
+  <!-- 一键授权登录 -->
+  <!-- <view class='codeLogin' wx:if="{{tabId==0}}">
+    <view class='codeLogin-view'>
+      <input type="number" bindinput='getBindphone' placeholder='请输入手机号' placeholder-class='font-middle' maxlength="11" focus></input>
+    </view>
+    <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="bindaccount" hover-class='{{ isFinished?"btn-click":""}}'>绑定</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为蜂鸟易居用户*</view>
+  </view> -->
+  <!-- 验证码登录 -->
+  <view class='codeLogin font-middle' >
+    <view class='codeLogin-view'>
+      <input type="text" bindinput='getUserName' placeholder='姓名' placeholder-class='font-middle' maxlength="11" focus></input>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input bindinput='getUserID' placeholder='身份证号' maxlength="18" placeholder-class='font-middle'></input>
+      <view class='codeLogin-code-image'><image src='{{imgUrl}}&v={{sjn}}' bindtap='getImg'></image></view>
+    </view>
+    <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="renzhen" hover-class='{{ isFinished?"btn-click":""}}'>认证</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为蜂鸟易居用户*</view>
+  </view>
+</view>

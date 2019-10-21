@@ -1,0 +1,165 @@
+<scroll-view class="body" scroll-y="true" bindscroll="scroll" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower">
+     <view bindtap='uploadonepic'>
+       <image class="picture_list"  src="{{onebackground}}"></image>
+        <image class="add_button" src="{{onebutton}}"></image>
+      </view>
+      <!-- <button bindtap="shangchuan">上传</button> -->
+  <!-- 区域选择 -->
+  <view>
+    <view class='search-place'>
+      <picker class="place1" mode="region" bindchange="bindViewEvent" data-model="component" 
+        data-method="bindSelect" data-name="region" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+              <view>省份/城市/区域：</view>
+              <view>{{region[0]}}</view> 
+              <view>{{region[1]}}</view>
+              <view>{{region[2]}}</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 区域选择 -->
+  <!-- 详细地址 -->
+  <view>
+    <text class="font">详细地址</text>
+    <view class="codeLogin-view">
+      <input class="font1" type="text" bindinput='getaddress' placeholder='请输入街道/小区/门牌号' value="{{address}}"></input>
+    </view>
+  </view>
+  <!-- 详细地址 -->
+  <!-- 房源标签 -->
+  <view>
+    <text class="font">房源详情</text>
+    <view class="codeLogin-view" bindtap='xiangqing'>
+      <text class="font1" type="text"  >{{xiangqingtitle}}</text>
+    </view>
+  </view>
+  <!-- 房源标签 -->
+  <!-- 房源标签 -->
+  <view>
+    <text class="font">房源标签</text>
+    <view class="codeLogin-view" bindtap='biaoqian'>
+      <text class="font1" type="text" >{{bioaqiantitle}}</text>
+    </view>
+  </view>
+  <!-- 房源标签 -->
+  <!-- 联系人 -->
+  <view>
+    <text class="font">联系人</text>
+    <view class="codeLogin-view">
+      <text class="font1">{{lianxiren}}</text>
+    </view>
+  </view>
+  <button style="background-color:green;color:#fff;position:fixed;bottom:3%;width:100%;" bindtap="submit">确定</button>
+  <!-- 联系人 -->
+  <!-- 标签 -->
+  <scroll-view scroll-y="{{isScroll}}">
+      <!-- 评论框 -->
+      <view class='model' wx:if="{{inputBoxShow}}">
+        <!-- invisible_model view 用于点击隐藏model评论框 -->
+        <view class='input-box'>
+          <view class='choose_items'>
+            <button 
+                wx:for="{{riderCommentList}}" 
+                wx:for-item="item" 
+                wx:key="item.index"  
+                bindtap="checkboxChange" 
+                data-value="{{item.value}}" 
+                data-index="{{index}}"  
+                checked="{{item.selected}}"
+                class="btn {{item.selected ? 'btn-selected' : ''}}" >
+                {{item.title}}
+              </button>
+          </view>
+          <view class='submit_btn'>
+            <button class='submit-btn' bindtap="bq_quxiao">取消</button>
+            <button class='submit-btn' bindtap="bq_queding">确定</button>
+          </view>
+        </view>
+      </view>
+</scroll-view>
+<!-- 标签 -->
+  <!-- 详情 -->
+      <view class='model' wx:if="{{inputxinxiShow}}" style="overflow-x:hidden;overflow-y:auto;">
+        <view class='xinxi-box'>
+          <text class='font'>房源类型</text>
+         <view>
+            <text class='font2'>房源户型:</text>
+            <view class="codeLogin-view1">
+              <input class="font1 huxing" type="number" maxlength="2"  bindinput='getjishi' placeholder='填写房源几室' value="{{jishi}}"></input><text class="font1 huxing1">室</text>
+              <input class="font1 huxing" type="number" maxlength="2"  bindinput='getjiting' placeholder='填写房源几厅'value="{{jiting}}"></input><text class="font1 huxing1">厅</text>
+            </view>
+          </view>
+          <view>
+            <text class='font2'>宜住人数:</text>
+            <view class="codeLogin-view1">
+              <input class="font1" type="number" bindinput='getjiren' placeholder='人数' value="{{jiren}}"></input>
+            </view>
+          </view>
+          <view>
+            <text class='font2'>房源类型:</text>
+            <view class="codeLogin-view1">
+              <!-- <input class="font1" type="text" bindinput='getdescription' placeholder='如:新源燕府精装大床房'></input> -->
+            <picker name="picker_hx" class="cybm_pic_1" value="{{fleixing[flx_index].id}}" data-selecthx="{{fleixing[flx_index].name}}" range="{{fleixing}}" range-key="{{'name'}}"  bindchange="fyleixing_change"  >
+              <view class="picker" >
+              <text class="font1">{{fylx}}:</text>  <text class="font1">{{fleixing[flx_index].name}} </text>
+              </view>
+            </picker>
+            </view>
+          </view>
+          <view>
+            <text class='font2'>床型:</text>
+            <view class="codeLogin-view1">
+            <picker name="picker_hx" class="cybm_pic_1" value="{{cleixinglist[clx_index].id}}" data-selecthx="{{cleixinglist[clx_index].name}}" range="{{cleixinglist}}" range-key="{{'name'}}"  bindchange="chuangleixing_change"  >
+              <view class="picker" >
+              <text class="font1">{{cleixing}}:</text>  <text class="font1">{{cleixinglist[clx_index].name}} </text>
+              </view>
+            </picker>
+              <!-- <input class="font1" type="text" bindinput='getdescription' placeholder='如:新源燕府精装大床房'></input> -->
+            </view>
+          </view>
+          <view>
+            <text class='font2'>房源面积:</text>
+            <view class="codeLogin-view1">
+              <input class="font1" type="number" bindinput='getmianji'maxlength="3" placeholder='平方米' value="{{mianji}}"></input>
+            </view>
+          </view>
+          <view>
+            <text class='font2'>租金:</text>
+            <view class="codeLogin-view1">
+              <input class="font1" type="number" bindinput='getzhujin'maxlength="8" placeholder='元/天' value="{{zhujin}}"></input>
+            </view>
+          </view>
+
+          <view>
+            <text class='font'>房源标题:</text>
+            <view class="codeLogin-view1">
+              <input class="font1" type="text" bindinput='gettitle' placeholder='如:新源燕府精装大床房' value="{{title}}"></input>
+            </view>
+          </view>
+
+          <view>
+            <text class='font'>房源描述</text>
+            <view class="codeLogin-view1">
+              <input class="font1" type="text" bindinput='getdescription' placeholder='您的房源有哪些特色~' value="{{description}}"></input>
+            </view>
+          </view>
+
+          <view>
+            <view>
+              <text class='font' style="float:left;width:100%;">房源图片</text>
+              <button  class="deleteimg" bindtap="deleteimg">删除图片</button>
+            </view>
+              <view wx:for="{{imglist}}" class="picture_item" wx:key="{{index}}">
+                <image wx:if="{{index==0}}" class="upload_progress" data-index="{{index}}" bindtap="uploadpics" src='{{item.src}}'></image>
+                <image wx:if="{{index!=0}}" class="upload_progress" data-index="{{index}}" src='{{item.src}}'></image>
+              </view>
+          </view>
+          <view class='submit_btn'>
+            <button class='submit-btn1' bindtap="xq_quxiao">取消</button>
+            <button class='submit-btn1' bindtap="xq_queding">确定</button>
+          </view>
+        </view>
+      </view>
+<!-- 详情 -->
+</scroll-view>

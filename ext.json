@@ -1,0 +1,15 @@
+// {
+//   "extEnable": true,
+//   "extAppid": "wx4e7b9f2119b57713",
+//   "ext": {
+//     "apiurl": "https://wx.05178.top/",   
+//     "appid": "wx4e7b9f2119b57713",
+//     "appkey": "deee9472b72756df653ad073d1d917f0",
+//     "skin": "skin1"
+//   },
+//   "extPages": {},
+//   "networkTimeout": {
+//     "request": 10000,
+//     "downloadFile": 10000
+//   }
+// }

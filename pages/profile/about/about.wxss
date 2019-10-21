@@ -1,0 +1,6 @@
+/* pages/profile/about/about.wxss */
+.info{
+  font-size: 30rpx;
+  text-indent:20rpx;
+  text-align:left;
+}

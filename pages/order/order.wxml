@@ -1,0 +1,40 @@
+<!--pages/order/order.wxml-->
+
+<block wx:if="{{isLogin}}">
+  <view class="tab">
+    <view class="tab-navbar"> 
+      <zan-tab
+        list="{{ list }}"
+        selected-id="{{ selectedId }}"
+        fixed="true"
+        bindtabchange="handleTabChange"
+        />
+    </view>
+  </view>
+  <view  hidden="{{orderList.length == 0}}">
+    <block wx:for="{{orderList}}" wx:key>
+      <view class='order' bindtap='navigatorToOrderDetail' data-id="{{item.orderId}}">
+        <view class='order-num font-middle'><text>{{item.HouseName}}</text><text class='cancle color-org font-big'>{{item.Status}}</text></view>
+        <view class="fugai"></view>
+        <!-- <view class='order-info'> -->
+          <view class='date font-middle'><text class="shijian1">{{item.startTime}}</text><view class="zhongjian"> </view><text class="shijian2">{{item.endTime}}</text></view>
+        <!-- </view> -->
+        <image src="{{item.ImageUrl}}" class="house_image"></image>
+      </view>
+    </block>
+    <view class='noMore font-small' wx:if="{{ orderList.length == total }}">
+      这里是最后一条啦~
+    </view>
+  </view>
+  <view hidden='{{orderList.length != 0}}' class='order-null'>
+    <text class='null-icon daoke-icon icon-meiyoujieguo color-org'></text>
+    <text class='font-middle'>\n您目前尚无此类订单~</text>
+  </view>
+</block>
+<block wx:else>
+  <view class='unlogin-icon'><text class='icon-unlogin daoke-icon icon-meiyoudingdan'></text></view>
+  <view class='unlogin-tip font-middle color-85'>啊哦，您还没有登录哦！</view>
+  <view class='unlogin-btn font-big' bindtap='toLogin' hover-class='btn-click'>立即登录</view>
+</block>
+
+<zan-toast id="zan-toast-test"></zan-toast>

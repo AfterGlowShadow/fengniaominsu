@@ -1,0 +1,6 @@
+<!--pages/profile/about/about.wxml-->
+<!-- <view class="bodyimg"> -->
+  <text class="phone_text" bindtap='Callphone'>tel:{{phone}}</text>
+  <text class="qq_text" bindtap='Callqq'>qq:{{qq}}</text>
+  <image calss="image" src='../../../img/profile/about/about.png' style="width:100%;height:100%;" mode='widthFix'></image>
+<!-- </view> -->

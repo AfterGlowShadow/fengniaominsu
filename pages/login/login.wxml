@@ -1,0 +1,40 @@
+<zan-toast id="zan-toast-test"></zan-toast>
+<view class='contain'>
+  <view class='tab'>
+    <view class="{{tabId==0?'tab-item':''}}" bindtap='changeTab'>一键授权登录</view>
+    <view class="{{tabId==1?'tab-item':''}}" bindtap='changeTab'>注册新帐号</view>
+  </view>
+  <view class="weishouquan" wx:if="{{squan==0}}">
+    <view style="color:red;text-algin:center;">请先授权 否则无法正常使用</view>
+    <!-- <button class="weishouquanbtn" open-type="getUserInfo" bindgetuserinfo='getUser'>获取用户信息(授权登录)</button> -->
+    <button class="weishouquanbtn" open-type="getUserInfo" bindgetuserinfo='onGotUserInfo'>获取用户信息(授权登录)</button>
+  </view>
+  <!-- 一键授权登录 -->
+  <view class='accLogin' wx:if="{{tabId==0}}">
+  <view class='codeLogin-view'>
+      <input type="number" bindinput='getBindphone' placeholder='请输入手机号' placeholder-class='font-middle' maxlength="11" ></input>
+    </view>
+    <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="bindaccount" hover-class='{{ isFinished?"btn-click":""}}'>绑定</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号将自动创建为蜂鸟易居用户,此账号用于接收住房密码，非常重要！！！*</view>
+  </view>
+ <!-- 验证码登录 -->
+  <view class='codeLogin font-middle' wx:else>
+    <view class='codeLogin-view'>
+      <input type="number" bindinput='getUserPhone' placeholder='请输入手机号' placeholder-class='font-middle' maxlength="11" focus></input>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input type="number" bindinput='getCodeNum' placeholder='请输入验证码' placeholder-class='font-middle' maxlength="6"></input>
+      <zan-button disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" size='code' type="org">{{time}}</zan-button>
+    </view>  
+    <view class='codeLogin-view codeLogin-code'>
+      <input bindinput='getpwd' placeholder='密码' placeholder-class='font-middle'></input>
+      <view class='codeLogin-code-image'><image src='{{imgUrl}}&v={{sjn}}' bindtap='getImg'></image></view>
+    </view>
+    <view class='codeLogin-view codeLogin-code'>
+      <input bindinput='getrepwd' placeholder='确认密码' placeholder-class='font-middle'></input>
+      <view class='codeLogin-code-image'><image src='{{imgUrl}}&v={{sjn}}' bindtap='getImg'></image></view>
+    </view>
+    <view class='btn-login' style="color: {{ isFinished?'#fff':'' }}" bindtap="register" hover-class='{{ isFinished?"btn-click":""}}'>注册</view>
+    <view class='accLogin-bottom font-small color-193'>*未注册的手机号请先注册新账号*</view>
+  </view>
+</view>

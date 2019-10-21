@@ -1,0 +1,22 @@
+/* pages/profile/about/about.wxss */
+.bodyimg{
+  width:100%;
+  height:100%
+}
+.bodyimg{
+  /* width:100%; */
+  /* height:1020rpx; */
+  display:flex;
+  height: 100%;
+  justify-content: center;
+  align-items:center;
+
+}
+.phone_text{
+  position: absolute;
+  margin:55% 0  0 30%;
+}
+.qq_text{
+  position: absolute;
+  margin:75% 0  0 30%;
+}

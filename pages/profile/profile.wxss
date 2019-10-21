@@ -1,0 +1,139 @@
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  background:rgb(253,130,56);
+  padding:10rpx 30rpx 30rpx 30rpx;
+}
+.header-tx{
+  display: flex;
+  width:120rpx;
+  height:120rpx;
+  border-radius:50%;
+  overflow:hidden;
+  margin-right:30rpx;
+  font-weight:normal;
+}
+.header-info{
+  display: flex;
+  font-weight:normal;
+  text-align: center;
+}
+.unLogin-tx{
+  background:#fff;
+  width:120rpx;
+  height:120rpx;
+  text-align:center;
+  line-height:120rpx
+}
+.userNickName{
+  font-size: 43rpx;
+  color: #fff;
+}
+.header-right{
+  width: 60%;
+  color: #fff;
+}
+.login-name{
+  height: 60rpx;
+  overflow: hidden;
+  text-overflow:  ellipsis;
+  white-space: nowrap;
+}
+.login-setPhone{
+  color:#fff;
+  font-size:26rpx;
+  background:rgba(0, 0, 0, 0.253);
+  border-radius:30rpx;
+  padding:10rpx 20rpx;
+  margin-top:5rpx;
+}
+.tx-icon{
+  font-size:50rpx;
+  color:rgb(256,138,56);
+}
+.info-login{
+  width: 480rpx;
+  color: #fff;
+  line-height: 110rpx;
+  font-size: 45rpx;
+  overflow: hidden;
+  text-overflow:  ellipsis;
+  white-space: nowrap;
+}
+/* 横向操作栏 */
+.trans_tool_bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:690rpx;
+  height:180rpx;
+  margin: 10rpx auto;
+  background:#fff;
+  margin-bottom:25rpx;
+  border:1px solid rgb(248,248,248);
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+}
+.trans_tool_items{
+  display: flex;
+  margin:0 20rpx 0 20rpx;
+  justify-content:center;
+  flex-direction:column;
+  /* border:1px solid blue; */
+}
+.trans_tool_items_img{
+  display: flex;
+  width:50rpx;
+  height:50rpx;
+  margin: 0 0 0 30rpx;
+  /* border-radius:35%; */
+  /* border:1px solid black; */
+}
+.trans_tool_items_title{
+  font-size:26rpx;
+  text-align: center;
+}
+/* 横向操作栏结束 */
+.menus{
+  background:#fff;
+  margin:0 30rpx;
+  line-height:90rpx;
+  /* margin-top:-70rpx; */
+}
+.menus-item{
+  padding: 0 40rpx;
+  border-top:1px solid rgb(248,248,248);
+}
+.menus-top{
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+  margin-bottom:25rpx;
+
+}
+.menus-middle{
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+  margin-bottom:25rpx;
+}
+.couponCount{
+  float: right;
+  margin: 0 10rpx 0 0;
+  line-height: 88rpx;
+}
+.menus-bottom{
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+}
+.arrow{
+  float: right;
+  font-size: 22rpx;
+}
+.item-title{
+  margin-left: 40rpx;
+}
+.item-icon{
+  color:rgb(253,130,56);
+}
+.exit{
+  margin: 70rpx 100rpx;
+  text-align: center;
+  box-shadow:1px 3px 6px 1px rgb(232,232,232);
+}

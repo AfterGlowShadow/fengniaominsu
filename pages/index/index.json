@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "蜂鸟易居",
+  "usingComponents": {
+    "zan-row": "/components/dist/row/index",
+    "zan-col": "/components/dist/col/index"
+  }
+}

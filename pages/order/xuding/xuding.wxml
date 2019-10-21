@@ -1,0 +1,16 @@
+<view class="biaoti">交易信息</view>
+  <view class="jiaoyistyle">
+    <view style="padding:1%;">
+      <text class="ziti" style='font-size:30rpx;'>房费</text>
+      <text class="rightinfo">￥{{order.orderPrice}}</text>
+    </view>
+    <view style="padding:1%;">
+      <text class="ziti" style='font-size:30rpx;'>押金</text>
+      <text class="rightinfo">￥{{order.orderDeposit}}</text>
+    </view>
+    <view style="padding:1%;">
+      <text class="ziti" style='color:red;font-size:30rpx;'>实付金额</text>
+      <text class="rightinfo">￥{{order.tongyi}}</text>
+    </view>
+  </view>
+   <view class="pay" bindtap='pay'>支付订单</view>

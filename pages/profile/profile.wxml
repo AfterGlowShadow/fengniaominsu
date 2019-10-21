@@ -1,0 +1,44 @@
+<!--pages/profile/profile.wxml-->
+<view class='contain'>
+  <view class='header'>
+    <view class='header-tx'>
+      <open-data type="userAvatarUrl" wx:if="{{isLogin}}"></open-data>
+      <view class='unLogin-tx' wx:else><text class='tx-icon daoke-icon icon-denglu'></text></view>
+    </view>
+    <view class='header-info'>
+      <view class='info-login font-large' bindtap='toLogin' wx:if="{{!isLogin}}">登录/注册</view>
+      <view class='info-login' wx:else><open-data type="userNickName" class="userNickName"></open-data></view>
+    </view> 
+  </view>
+  <!-- 横向操作栏 -->
+  <view class="trans_tool_bar">
+
+  <block wx:for="{{transtoollist}}" wx:key>
+      <view class="trans_tool_items" bindtap='TransTool' data-id="{{item.id}}">
+        <image class='trans_tool_items_img' data-path="{{item.location}}"  src='{{item.imageURL}}' ></image>
+        <view class="trans_tool_items_title">{{item.title}}</view>
+      </view>
+  </block>
+    
+
+  </view>
+  <!-- 横向操作栏结束 -->
+  <view class='menus font-middle'>
+    <view class='menus-top'> 
+      <view class='menus-item' hover-class='btn-click-242' bindtap='ShowMeFangyuan'><text class='item-icon daoke-icon icon-dd'></text><text class='item-title'>我的房源</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+       <view class='menus-item' hover-class='btn-click-242' bindtap='ShowMeShoucang'><text class='item-icon daoke-icon icon-fapiao-'></text><text class='item-title'>我的收藏</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+      <!-- <view class='menus-item' hover-class='btn-click-242' bindtap='toCoupon'><text class='item-icon daoke-icon icon-youhuiquan'></text><text class='item-title'>优惠券</text><text class='arrow daoke-icon icon-zhixiang'></text><text class='couponCount' wx:if="{{isLogin}}">0张</text></view> -->
+    </view>
+     <view class='menus-middle'>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='tosetinfomation'><text class='item-icon daoke-icon icon-zhuanfa'></text><text class='item-title'>信息管理</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+      <!-- <view class='menus-item' hover-class='btn-click-242' bindtap='Userset'><text class='item-icon daoke-icon icon-fapiao-'></text><text class='item-title'>个人设置</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='contact'><text class='item-icon daoke-icon icon-icon-test'></text><text class='item-title'>联系客服</text><text class='arrow daoke-icon icon-zhixiang'></text></view> -->
+    </view>
+    <view class='menus-bottom'>
+      <view class='menus-item' hover-class='btn-click-242' bindtap='toSuggestion'><text class='item-icon daoke-icon icon-yijianfankui'></text><text class='item-title'>意见反馈</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+       <view class='menus-item' hover-class='btn-click-242' bindtap='ToAbout'><text class='item-icon daoke-icon icon-zhuanfa'></text><text class='item-title'>关于我们</text><text class='arrow daoke-icon icon-zhixiang'></text></view>
+    </view>
+
+    <view class='exit color-85' wx:if="{{isLogin}}" bindtap='exit' hover-class='btn-click-242'>退出登录</view>
+  </view>
+</view>

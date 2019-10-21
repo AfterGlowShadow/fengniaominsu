@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "续订详情",
+  "usingComponents": {
+    "zan-popup": "/components/dist/popup/index"
+  }
+}
